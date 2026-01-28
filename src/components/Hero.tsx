@@ -8,9 +8,12 @@ export default function Hero() {
         <div className="container">
           <div className={styles.navContent}>
             <div className={styles.logo}>
-              {/* SELETOR: logo-image - Insira seu logo aqui */}
-              <div className={styles.logoImage}></div>
-              <span className={styles.logoText}>Dra. Raphaella Pontes</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo.svg"
+                alt="Instituto Dra. Raphaella Pontes"
+                className={styles.logoImage}
+              />
             </div>
             <div className={styles.navContact}>
               <a href="tel:+5571994098952">(71) 99409-8952</a>
@@ -41,8 +44,12 @@ export default function Hero() {
             </ScrollReveal>
             
             <ScrollReveal className={`${styles.heroImageWrapper} hero-image-wrapper`}>
-              {/* SELETOR: hero-image - Insira a foto da Dra aqui */}
-              <div className={`${styles.heroImage} hero-image`}></div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/images/dra-hero.png" 
+                alt="Dra. Raphaella Pontes"
+                className={`${styles.heroImage} hero-image`}
+              />
               <div className={styles.heroImageDecoration}></div>
             </ScrollReveal>
           </div>

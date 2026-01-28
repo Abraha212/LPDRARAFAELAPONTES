@@ -17,29 +17,12 @@
 
 .bioImage {
   width: 100%;
-  height: 600px;
-  background-color: rgba(145, 77, 58, 0.1);
+  height: auto;
+  max-height: 650px;
   border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  /* Substitua por sua imagem:
-  background-image: url('/images/dra-bio.jpg');
-  background-size: cover;
-  background-position: center;
-  */
-}
-
-.bioImage::after {
-  content: 'Foto da Dra.';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--color-terracota);
-  opacity: 0.4;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 2px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 20px 60px rgba(90, 46, 34, 0.2);
 }
 
 .bioDecoration {

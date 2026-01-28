@@ -7,8 +7,12 @@ export default function Bio() {
       <div className="container">
         <div className={`${styles.bioGrid} bio-grid`}>
           <ScrollReveal className={styles.bioImageWrapper}>
-            {/* SELETOR: bio-image - Insira a foto da Dra aqui */}
-            <div className={`${styles.bioImage} bio-image`}></div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/dra-bio.png" 
+              alt="Dra. Raphaella Pontes"
+              className={`${styles.bioImage} bio-image`}
+            />
             <div className={styles.bioDecoration}></div>
           </ScrollReveal>
 

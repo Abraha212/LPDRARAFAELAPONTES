@@ -34,31 +34,12 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-/* SELETOR PARA O LOGO */
 .logoImage {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Substitua por sua imagem:
-  background-image: url('/images/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  */
-}
-
-.logoText {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-text-light);
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navContact {
@@ -130,32 +111,16 @@
   align-items: center;
 }
 
-/* SELETOR PARA FOTO DA DRA NO HERO */
+/* Foto da Dra no Hero */
 .heroImage {
   width: 100%;
   max-width: 480px;
-  height: 580px;
-  background-color: rgba(255, 255, 255, 0.08);
+  height: auto;
+  max-height: 600px;
   border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  /* Substitua por sua imagem:
-  background-image: url('/images/dra-hero.jpg');
-  background-size: cover;
-  background-position: center top;
-  */
-}
-
-.heroImage::after {
-  content: 'Foto da Dra.';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 2px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .heroImageDecoration {

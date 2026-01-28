@@ -19,6 +19,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Dra. Raphaella Pontes | Saúde Hormonal e Perda de Peso',
   description: 'Dra. Raphaella Pontes - Médica especialista em perda de peso saudável e saúde hormonal. Agende sua consulta.',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

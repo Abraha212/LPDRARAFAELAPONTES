@@ -52,6 +52,16 @@ export default function Footer() {
 
         <div className={styles.footerBottom}>
           <p>© 2026 Dra. Raphaella Pontes. Todos os direitos reservados.</p>
+          <p className={styles.credits}>
+            Desenvolvido com ❤️ por{' '}
+            <a 
+              href="https://www.instagram.com/briolab__/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              BrioLab
+            </a>
+          </p>
         </div>
       </div>
     </footer>
