@@ -1,0 +1,84 @@
+.bio {
+  background-color: var(--color-cream);
+  padding: var(--section-padding);
+}
+
+.bioGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* SELETOR PARA FOTO DA DRA NA BIO */
+.bioImageWrapper {
+  position: relative;
+}
+
+.bioImage {
+  width: 100%;
+  height: 600px;
+  background-color: rgba(145, 77, 58, 0.1);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  /* Substitua por sua imagem:
+  background-image: url('/images/dra-bio.jpg');
+  background-size: cover;
+  background-position: center;
+  */
+}
+
+.bioImage::after {
+  content: 'Foto da Dra.';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-terracota);
+  opacity: 0.4;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.bioDecoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-terracota);
+  border-radius: 20px;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.bioContent h2 {
+  font-family: var(--font-heading);
+  font-size: var(--section-title);
+  font-weight: 600;
+  color: var(--color-terracota-dark);
+  margin-bottom: 30px;
+}
+
+.bioContent p {
+  font-size: 17px;
+  color: var(--color-terracota);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.bioHighlight {
+  background-color: var(--color-white);
+  padding: 28px 32px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-terracota);
+  margin-top: 30px;
+}
+
+.bioHighlight p {
+  font-style: italic;
+  margin-bottom: 0;
+  opacity: 0.9;
+}

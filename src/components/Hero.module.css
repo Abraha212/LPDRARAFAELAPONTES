@@ -1,0 +1,170 @@
+.hero {
+  background-color: var(--color-terracota);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Navigation */
+.nav {
+  padding: 24px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* SELETOR PARA O LOGO */
+.logoImage {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Substitua por sua imagem:
+  background-image: url('/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  */
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.navContact {
+  font-size: 14px;
+  color: var(--color-text-light);
+  opacity: 0.9;
+}
+
+.navContact a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.navContact a:hover {
+  opacity: 0.8;
+}
+
+/* Hero Content */
+.heroContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 60px 0 100px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.heroText {
+  z-index: 2;
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: var(--headline-desktop);
+  font-weight: 700;
+  color: var(--color-text-light);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.heroSubtext {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--color-text-light);
+  opacity: 0.85;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* Hero Image */
+.heroImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SELETOR PARA FOTO DA DRA NO HERO */
+.heroImage {
+  width: 100%;
+  max-width: 480px;
+  height: 580px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  /* Substitua por sua imagem:
+  background-image: url('/images/dra-hero.jpg');
+  background-size: cover;
+  background-position: center top;
+  */
+}
+
+.heroImage::after {
+  content: 'Foto da Dra.';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.heroImageDecoration {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  top: -10%;
+  left: -10%;
+  pointer-events: none;
+}

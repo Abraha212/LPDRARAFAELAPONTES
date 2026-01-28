@@ -1,0 +1,75 @@
+.tratamentos {
+  background-color: var(--color-cream);
+  padding: var(--section-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--section-title);
+  font-weight: 600;
+  color: var(--color-terracota-dark);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--color-terracota);
+  opacity: 0.8;
+}
+
+.tratamentosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.tratamentoCard {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 30px rgba(90, 46, 34, 0.06);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(145, 77, 58, 0.08);
+}
+
+.tratamentoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(90, 46, 34, 0.12);
+}
+
+.tratamentoIcon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-terracota);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.tratamentoIcon svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--color-text-light);
+}
+
+.tratamentoCard h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-terracota-dark);
+  margin-bottom: 14px;
+}
+
+.tratamentoCard p {
+  font-size: 16px;
+  color: var(--color-terracota);
+  line-height: 1.7;
+  opacity: 0.85;
+}

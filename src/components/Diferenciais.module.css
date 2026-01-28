@@ -1,0 +1,71 @@
+.diferenciais {
+  background-color: var(--color-terracota);
+  padding: var(--section-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--section-title);
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+.diferenciaisGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.diferencialItem {
+  text-align: center;
+  padding: 20px;
+}
+
+.diferencialIcon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  transition: var(--transition-smooth);
+}
+
+.diferencialItem:hover .diferencialIcon {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.diferencialIcon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-text-light);
+}
+
+.diferencialItem h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 14px;
+}
+
+.diferencialItem p {
+  font-size: 16px;
+  color: var(--color-text-light);
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+.diferenciaisCta {
+  text-align: center;
+}

@@ -1,0 +1,210 @@
+/* ========================================
+   CSS RESET & VARIABLES
+======================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores principais */
+  --color-terracota: #914d3a;
+  --color-terracota-dark: #5A2E22;
+  --color-cream: #FDFBF9;
+  --color-text-light: #F5F5F5;
+  --color-white: #FFFFFF;
+  
+  /* Fontes */
+  --font-heading: var(--font-heading), Georgia, serif;
+  --font-body: var(--font-body), 'Segoe UI', sans-serif;
+  
+  /* Tamanhos */
+  --headline-desktop: 56px;
+  --headline-mobile: 32px;
+  --section-title: 36px;
+  --body-text: 18px;
+  
+  /* Espaçamentos */
+  --section-padding: 100px 0;
+  --container-width: 1200px;
+  
+  /* Transições */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--body-text);
+  line-height: 1.7;
+  color: var(--color-terracota-dark);
+  background-color: var(--color-cream);
+  overflow-x: hidden;
+}
+
+/* ========================================
+   UTILITIES
+======================================== */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sr-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-cream);
+  color: var(--color-terracota-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--color-terracota);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 20px rgba(145, 77, 58, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-terracota-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(145, 77, 58, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+
+  .hero-image-wrapper {
+    order: -1;
+  }
+
+  .hero-image {
+    max-width: 350px !important;
+    height: 420px !important;
+    margin: 0 auto;
+  }
+
+  .bio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 50px !important;
+  }
+
+  .bio-image {
+    height: 450px !important;
+  }
+
+  .diferenciais-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 70px 0;
+  }
+
+  .headline {
+    font-size: var(--headline-mobile) !important;
+  }
+
+  .section-title {
+    font-size: 28px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 18px !important;
+  }
+
+  .hero-subtext {
+    font-size: 16px !important;
+  }
+
+  .tratamentos-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-info {
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 16px 32px;
+    font-size: 14px;
+  }
+
+  .nav-contact {
+    display: none;
+  }
+
+  .whatsapp-float {
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .tratamento-card {
+    padding: 28px 24px !important;
+  }
+
+  .hero-image {
+    height: 350px !important;
+  }
+
+  .bio-image {
+    height: 380px !important;
+  }
+}
