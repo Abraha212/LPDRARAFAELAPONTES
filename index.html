@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dra. Raphaella Pontes - Médica especialista em perda de peso saudável e saúde hormonal. Agende sua consulta.">
+    <title>Dra. Raphaella Pontes | Saúde Hormonal e Perda de Peso</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CSS RESET & VARIABLES
+        ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cores principais */
+            --color-terracota: #914d3a;
+            --color-terracota-dark: #5A2E22;
+            --color-cream: #FDFBF9;
+            --color-text-light: #F5F5F5;
+            --color-white: #FFFFFF;
+            
+            /* Fontes */
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+            
+            /* Tamanhos */
+            --headline-desktop: 56px;
+            --headline-mobile: 32px;
+            --section-title: 36px;
+            --body-text: 18px;
+            
+            /* Espaçamentos */
+            --section-padding: 100px 0;
+            --container-width: 1200px;
+            
+            /* Transições */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--body-text);
+            line-height: 1.7;
+            color: var(--color-terracota-dark);
+            background-color: var(--color-cream);
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           UTILITIES
+        ======================================== */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .sr-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .sr-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           BUTTONS
+        ======================================== */
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-cream);
+            color: var(--color-terracota-dark);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-terracota);
+            color: var(--color-text-light);
+            box-shadow: 0 4px 20px rgba(145, 77, 58, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-terracota-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(145, 77, 58, 0.4);
+        }
+
+        /* ========================================
+           HEADER / HERO SECTION
+        ======================================== */
+        .hero {
+            background-color: var(--color-terracota);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .nav {
+            padding: 24px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* SELETOR PARA O LOGO - Inserir imagem aqui */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
+            /* Placeholder para o logo - substitua por sua imagem */
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Remova o background e adicione sua imagem */
+            /* background-image: url('seu-logo.png'); */
+            /* background-size: contain; */
+            /* background-repeat: no-repeat; */
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-text-light);
+        }
+
+        .nav-contact {
+            font-size: 14px;
+            color: var(--color-text-light);
+            opacity: 0.9;
+        }
+
+        .nav-contact a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-contact a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 60px 0 100px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .headline {
+            font-family: var(--font-heading);
+            font-size: var(--headline-desktop);
+            font-weight: 700;
+            color: var(--color-text-light);
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--color-text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .hero-subtext {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--color-text-light);
+            opacity: 0.85;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* SELETOR PARA FOTO DA DRA NO HERO */
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            /* Placeholder para foto da Dra - substitua por sua imagem */
+            width: 100%;
+            max-width: 480px;
+            height: 580px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            /* Remova o background e adicione sua imagem */
+            /* background-image: url('foto-dra-hero.jpg'); */
+            /* background-size: cover; */
+            /* background-position: center top; */
+        }
+
+        .hero-image::after {
+            content: 'Foto da Dra.';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-image-decoration {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            top: -10%;
+            left: -10%;
+            pointer-events: none;
+        }
+
+        /* ========================================
+           TRATAMENTOS SECTION
+        ======================================== */
+        .tratamentos {
+            background-color: var(--color-cream);
+            padding: var(--section-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: var(--section-title);
+            font-weight: 600;
+            color: var(--color-terracota-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--color-terracota);
+            opacity: 0.8;
+        }
+
+        .tratamentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .tratamento-card {
+            background-color: var(--color-white);
+            border-radius: 16px;
+            padding: 36px 32px;
+            box-shadow: 0 4px 30px rgba(90, 46, 34, 0.06);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(145, 77, 58, 0.08);
+        }
+
+        .tratamento-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(90, 46, 34, 0.12);
+        }
+
+        .tratamento-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-terracota);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .tratamento-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--color-text-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .tratamento-card h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-terracota-dark);
+            margin-bottom: 14px;
+        }
+
+        .tratamento-card p {
+            font-size: 16px;
+            color: var(--color-terracota);
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+
+        /* ========================================
+           DIFERENCIAIS SECTION
+        ======================================== */
+        .diferenciais {
+            background-color: var(--color-terracota);
+            padding: var(--section-padding);
+        }
+
+        .diferenciais .section-title {
+            color: var(--color-text-light);
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .diferencial-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .diferencial-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            transition: var(--transition-smooth);
+        }
+
+        .diferencial-item:hover .diferencial-icon {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .diferencial-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-text-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .diferencial-item h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--color-text-light);
+            margin-bottom: 14px;
+        }
+
+        .diferencial-item p {
+            font-size: 16px;
+            color: var(--color-text-light);
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        .diferenciais-cta {
+            text-align: center;
+        }
+
+        /* ========================================
+           BIO SECTION
+        ======================================== */
+        .bio {
+            background-color: var(--color-cream);
+            padding: var(--section-padding);
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* SELETOR PARA FOTO DA DRA NA BIO */
+        .bio-image-wrapper {
+            position: relative;
+        }
+
+        .bio-image {
+            /* Placeholder para foto da Dra na bio - substitua por sua imagem */
+            width: 100%;
+            height: 600px;
+            background-color: rgba(145, 77, 58, 0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            /* Remova o background e adicione sua imagem */
+            /* background-image: url('foto-dra-bio.jpg'); */
+            /* background-size: cover; */
+            /* background-position: center; */
+        }
+
+        .bio-image::after {
+            content: 'Foto da Dra.';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-terracota);
+            opacity: 0.4;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .bio-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-terracota);
+            border-radius: 20px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .bio-content h2 {
+            font-family: var(--font-heading);
+            font-size: var(--section-title);
+            font-weight: 600;
+            color: var(--color-terracota-dark);
+            margin-bottom: 30px;
+        }
+
+        .bio-content p {
+            font-size: 17px;
+            color: var(--color-terracota);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .bio-highlight {
+            background-color: var(--color-white);
+            padding: 28px 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-terracota);
+            margin-top: 30px;
+        }
+
+        .bio-highlight p {
+            font-style: italic;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background-color: var(--color-terracota-dark);
+            padding: 80px 0 40px;
+        }
+
+        .footer-quote {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .footer-quote p {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--color-text-light);
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-contact h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+        }
+
+        .footer-contact p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            opacity: 0.8;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .footer-contact a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-contact a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .social-link svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--color-text-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            opacity: 0.6;
+        }
+
+        /* ========================================
+           WHATSAPP FLOAT BUTTON
+        ======================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+        ======================================== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-image-wrapper {
+                order: -1;
+            }
+
+            .hero-image {
+                max-width: 350px;
+                height: 420px;
+                margin: 0 auto;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .bio-image {
+                height: 450px;
+            }
+
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 70px 0;
+            }
+
+            .headline {
+                font-size: var(--headline-mobile);
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-subtext {
+                font-size: 16px;
+            }
+
+            .tratamentos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-info {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .btn {
+                padding: 16px 32px;
+                font-size: 14px;
+            }
+
+            .nav-contact {
+                display: none;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .tratamento-card {
+                padding: 28px 24px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .bio-image {
+                height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section class="hero">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <!-- SELETOR: .logo-image - Insira seu logo aqui -->
+                        <div class="logo-image"></div>
+                        <span class="logo-text">Dra. Raphaella Pontes</span>
+                    </div>
+                    <div class="nav-contact">
+                        <a href="tel:+5571994098952">(71) 99409-8952</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text sr-hidden">
+                        <h1 class="headline">Você luta contra distúrbios hormonais ou problemas de saúde que impactam seu bem-estar?</h1>
+                        <p class="hero-subtitle">Eu sou a Dra Raphaella Pontes, médica com foco em perda de peso saudável e saúde hormonal e eu posso te ajudar.</p>
+                        <p class="hero-subtext">Sei que tomar a decisão de mudar seu estilo de vida pode ser desafiador mas estou aqui para te acompanhar nesse processo.</p>
+                        <a href="https://wa.me/5571994098952?text=Olá! Gostaria de agendar uma consulta." class="btn btn-primary">Agendar consulta</a>
+                    </div>
+                    <div class="hero-image-wrapper sr-hidden">
+                        <!-- SELETOR: .hero-image - Insira a foto da Dra aqui -->
+                        <div class="hero-image"></div>
+                        <div class="hero-image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TRATAMENTOS SECTION
+    ======================================== -->
+    <section class="tratamentos" id="tratamentos">
+        <div class="container">
+            <div class="section-header sr-hidden">
+                <h2 class="section-title">Como posso ajudar?</h2>
+                <p class="section-subtitle">Tratamentos personalizados para sua saúde e bem-estar</p>
+            </div>
+
+            <div class="tratamentos-grid">
+                <!-- Card 1 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Tratamentos para o Sobrepeso e Obesidade</h3>
+                    <p>Acompanhamento médico para o manejo do sobrepeso com programas individualizados que consideram as necessidades de cada paciente.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <h3>Saúde Hormonal</h3>
+                    <p>Avaliação e tratamento de deficiências hormonais por todas as vias, com prescrição individualizada após consulta médica.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+                    </div>
+                    <h3>Tratamento da Sarcopenia</h3>
+                    <p>Orientação médica para o desenvolvimento de massa muscular com acompanhamento profissional.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                    </div>
+                    <h3>Tratamento de Lipedema</h3>
+                    <p>Diagnóstico e tratamento do lipedema, com base em avaliação clínica e intervenções médicas personalizadas.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    </div>
+                    <h3>Terapias Injetáveis</h3>
+                    <p>Administração de terapias injetáveis sob indicação e supervisão médica.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                    </div>
+                    <h3>Baixa Disposição</h3>
+                    <p>Investigação das causas de baixa disposição, com foco no diagnóstico e tratamento individualizado.</p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Distúrbios Sexuais</h3>
+                    <p>Avaliação das causas, com proposta de intervenções personalizadas.</p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="tratamento-card sr-hidden">
+                    <div class="tratamento-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h3>Menopausa</h3>
+                    <p>Manejo dos sintomas da menopausa, com acompanhamento médico e tratamento individualizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         DIFERENCIAIS SECTION
+    ======================================== -->
+    <section class="diferenciais" id="diferenciais">
+        <div class="container">
+            <div class="section-header sr-hidden">
+                <h2 class="section-title">Muito além do tratamento</h2>
+            </div>
+
+            <div class="diferenciais-grid">
+                <div class="diferencial-item sr-hidden">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Atendimento humanizado e personalizado</h3>
+                    <p>Uma equipe está sempre pronta para acolher e escutar suas preocupações.</p>
+                </div>
+
+                <div class="diferencial-item sr-hidden">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                    </div>
+                    <h3>Acesso direto e fácil</h3>
+                    <p>Disponibilizamos nosso WhatsApp pessoal para garantir que você tenha suporte a qualquer momento.</p>
+                </div>
+
+                <div class="diferencial-item sr-hidden">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <h3>Localização estratégica</h3>
+                    <p>Localizados em um shopping center, proporcionando segurança e fácil acesso para você.</p>
+                </div>
+            </div>
+
+            <div class="diferenciais-cta sr-hidden">
+                <a href="https://wa.me/5571994098952?text=Olá! Gostaria de mais informações sobre a consulta." class="btn btn-primary">Quero mais informações sobre a consulta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         BIO SECTION
+    ======================================== -->
+    <section class="bio" id="sobre">
+        <div class="container">
+            <div class="bio-grid">
+                <div class="bio-image-wrapper sr-hidden">
+                    <!-- SELETOR: .bio-image - Insira a foto da Dra aqui -->
+                    <div class="bio-image"></div>
+                    <div class="bio-decoration"></div>
+                </div>
+
+                <div class="bio-content sr-hidden">
+                    <h2>Dra. Raphaella Pontes</h2>
+                    <p>Há 12 anos na medicina, construí uma trajetória dedicada ao cuidado integral da saúde. Minha formação começou na graduação em Medicina, seguida de uma pós-graduação no Hospital Israelita Albert Einstein, uma das instituições mais renomadas do país.</p>
+                    <p>Ao longo desses anos, desenvolvi uma abordagem que vai além do tratamento de sintomas. Acredito que cada paciente merece um olhar individualizado, considerando não apenas suas queixas, mas todo o contexto de sua vida, hábitos e objetivos.</p>
+                    <p>Minha especialização em saúde hormonal e perda de peso saudável nasceu da percepção de que muitos problemas de saúde estão interligados. Um desequilíbrio hormonal pode afetar o peso, a disposição, o humor e a qualidade de vida como um todo.</p>
+                    
+                    <div class="bio-highlight">
+                        <p>"O objetivo da minha clínica é proporcionar um atendimento que realmente transforme vidas, com ciência, empatia e dedicação a cada pessoa que confia em mim."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-quote sr-hidden">
+                <p>"Você é o projeto mais importante da sua vida. Não se deixe para depois."</p>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-contact">
+                    <h4>Entre em Contato</h4>
+                    <p><strong>Endereço:</strong> Boulevard Shopping Camaçari<br>Rodovia BA-535, s/n - Sala 1096</p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5571994098952">(71) 99409-8952</a></p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://wa.me/5571994098952" class="social-link" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Dra. Raphaella Pontes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5571994098952?text=Olá! Gostaria de mais informações." class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- ========================================
+         SCROLL REVEAL SCRIPT
+    ======================================== -->
+    <script>
+        // Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add staggered delay for cards
+                        const delay = entry.target.closest('.tratamentos-grid') || 
+                                     entry.target.closest('.diferenciais-grid') 
+                                     ? index * 100 : 0;
+                        
+                        setTimeout(() => {
+                            entry.target.classList.add('sr-visible');
+                        }, delay);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with sr-hidden class
+            const elementsToReveal = document.querySelectorAll('.sr-hidden');
+            elementsToReveal.forEach(el => observer.observe(el));
+
+            // Staggered animation for grid items
+            const grids = document.querySelectorAll('.tratamentos-grid, .diferenciais-grid');
+            grids.forEach(grid => {
+                const items = grid.querySelectorAll('.sr-hidden');
+                const gridObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        items.forEach((item, i) => {
+                            setTimeout(() => {
+                                item.classList.add('sr-visible');
+                            }, i * 120);
+                        });
+                        gridObserver.disconnect();
+                    }
+                }, { threshold: 0.2 });
+                
+                gridObserver.observe(grid);
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
